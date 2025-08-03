@@ -10,19 +10,19 @@ namespace BASSdotNET
 {
     public class BASS
     {
-        [DllImport("C:\\BassLib\\bass.dll")]
+        [DllImport(@"bass.dll")]
         public static extern bool BASS_Start(); //BASS START
 
-        [DllImport("C:\\BassLib\\bass.dll")]
+        [DllImport(@"bass.dll")]
         public static extern bool BASS_Stop(); //Stopping BASS Sound File
 
-        [DllImport("C:\\BassLib\\bass.dll")]
+        [DllImport(@"bass.dll")]
         public static extern bool BASS_Init(int device, Int32 freq, Int32 flags, int win, int dsguid); //Initializating BASS
 
-        [DllImport("C:\\BassLib\\bass.dll")]
+        [DllImport(@"bass.dll")]
         public static extern UInt32 BASS_StreamCreateFile(int mem, string filename, int offset, int length, int flags); //Creating Stream File :D
 
-        [DllImport("C:\\BassLib\\bass.dll")]
+        [DllImport(@"bass.dll")]
         public static extern void BASS_ChannelPlay(UInt32 handle, bool restart); //Calling C Programming Function for Playing Sound File :D
 
         public bool Init_Bass(int dev_id, Int32 frequence, Int32 flags_bass ,int windows, int dsGUID)
@@ -73,3 +73,4 @@ namespace BASSdotNET
         }
     }
 }
+
