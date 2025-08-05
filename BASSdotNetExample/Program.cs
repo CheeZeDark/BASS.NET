@@ -44,7 +44,7 @@ namespace BASSdotNetExample
                 config.SetUpdateInterval(TimeSpan.FromMilliseconds(100));
                 config.SetMaxHistoryLines(1000);
                 config.SetQuitHandler((consoleInstance) => {
-                    Console.Write("Quiting...");
+                    Console.Write("Quitting...");
                     Environment.Exit(3021);
                 });
             });
@@ -59,16 +59,17 @@ namespace BASSdotNetExample
                 if (bass.START())
                 {
                     Console.WriteLine("STARTED!!!");
-                    UInt32 str = bass.CreateBASS_FileStream(0, Utf16ToUtf8("SixFeetUnderground.mp3"), 0, 0, bass_sampleloop);
+                    UInt32 sixfeetunderground_music = bass.CreateBASS_FileStream(0, Utf16ToUtf8("SixFeetUnderground.mp3"), 0, 0, bass_sampleloop);
                     if(str == 0)
                     {
                         Console.WriteLine("BASS.DLL IS FAILED TO CREATING FILE STREAM!!!");
                         Environment.Exit(323);
                     }
-                    bass.ChannelPlay(str, false);
+                    bass.ChannelPlay(sixfeetunderground_music, false);
                     console.WaitForClose();
                 }
             }
         }
     }
 }
+
